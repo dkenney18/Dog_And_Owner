@@ -11,6 +11,7 @@ class Owner {
   constructor(name) {
     this.name = name
     this.dogs = []
+    this.id = generateID()
   }
 
   addDog(dog, owner) {
@@ -33,6 +34,7 @@ class Dog {
     this.breed = breed
     this.owner = owner
     this.owned = false
+    this.id = generateID()
   }
 
   hasOwner() {
@@ -52,6 +54,10 @@ class Dog {
   getOwner() {
     return this.owner
   }
+}
+
+function generateID() {
+  return Math.random().toString(36).replace('0.', '') 
 }
 
 var devin = new Owner("Devin")
