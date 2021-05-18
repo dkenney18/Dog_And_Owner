@@ -23,7 +23,7 @@ class Owner {
 
   displayDogs() {
     this.dogs.forEach((dog) => {
-      console.log(`${dog.name} is a ${dog.breed} and is owned by ${dog.owner.name}`)
+      console.log(`${dog.name} is a ${dog.breed} and is owned by ${dog.owner.name} the dogs id is ${dog.id} and the owners id is ${dog.owner.id}`)
     })
   }
 }
@@ -57,7 +57,7 @@ class Dog {
 }
 
 function generateID() {
-  return Math.random().toString(36).replace('0.', '') 
+  return Math.random().toString(36).substr(2) 
 }
 
 var devin = new Owner("Devin")
