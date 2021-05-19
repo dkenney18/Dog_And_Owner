@@ -7,6 +7,11 @@ const breeds = {
   LABRADOOR: 'labradoor',
 }
 
+const animal_types = {
+  DOG: 'dog',
+  CAT: 'cat',
+}
+
 class Owner {
   constructor(name) {
     this.name = name
@@ -28,16 +33,17 @@ class Owner {
   }
 }
 
-class Dog {
-  constructor(name, breed, owner = null) {
+class Animal {
+  constructor(name, breed, type, owner = null) {
     this.name = name
     this.breed = breed
     this.owner = owner
     this.owned = false
+    this.type = type
     this.id = generateID(50)
   }
 
-  canAddOwner() {
+   canAddOwner() {
     return (!this.owned) ? true : false
   }
 
@@ -47,6 +53,17 @@ class Dog {
       this.owned = true
     }
   }
+
+  speak() {}
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log("Woof")
+  }
+}
+
+class Cat extends Animal {
 }
 
 function generateID(length) {
@@ -59,10 +76,10 @@ function generateID(length) {
 }
 
 var devin = new Owner("Devin")
-var sammy = new Dog("sammy", breeds.PUG)
-var fido = new Dog("fido", breeds.POODLE)
-var jill = new Dog("jill", breeds.GOLDEN_RETREIVER)
-var lina = new Dog("lina", breeds.CORGI)
+var sammy = new Dog("sammy", breeds.PUG, animal_types.DOG)
+var fido = new Dog("fido", breeds.POODLE, animal_types.DOG)
+var jill = new Dog("jill", breeds.GOLDEN_RETREIVER, animal_types.DOG)
+var lina = new Dog("lina", breeds.CORGI, animal_types.DOG)
 
 devin.addDog(sammy, devin)
 devin.addDog(jill, devin)
