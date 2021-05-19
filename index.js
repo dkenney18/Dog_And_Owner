@@ -103,4 +103,5 @@ devin.addAnimal(anabell, devin)
 devin.addAnimal(lin, devin)
 devin.addAnimal(inna, devin)
 devin.addAnimal(linus, devin)
+
 devin.displayAnimals()
