@@ -15,7 +15,7 @@ class Owner {
   }
 
   addDog(dog, owner) {
-    if (dog.hasOwner()) {
+    if (dog.canAddOwner()) {
       dog.setOwner(owner)
       this.dogs.push(dog)
     }
@@ -37,12 +37,12 @@ class Dog {
     this.id = generateID(50)
   }
 
-  hasOwner() {
+  canAddOwner() {
     return (!this.owned) ? true : false
   }
 
   setOwner(owner) {
-    if (this.hasOwner()) {
+    if (this.canAddOwner()) {
       this.owner = owner
       this.owned = true
     }
