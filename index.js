@@ -38,10 +38,7 @@ class Dog {
   }
 
   hasOwner() {
-    if (!this.owned) {
-      return true
-    }
-    return false
+    return (!this.owned) ? true : false
   }
 
   setOwner(owner) {
@@ -49,10 +46,6 @@ class Dog {
       this.owner = owner
       this.owned = true
     }
-  }
-
-  getOwner() {
-    return this.owner
   }
 }
 
