@@ -5,6 +5,8 @@ const breeds = {
   GOLDEN_RETREIVER: 'golden_retreiver',
   TERRIER: 'terrier',
   LABRADOOR: 'labradoor',
+  LONG_HAIRED_CAT: 'long_haired_cat',
+  TABBY_CAT: 'tabby cat'
 }
 
 const animal_types = {
@@ -15,20 +17,20 @@ const animal_types = {
 class Owner {
   constructor(name) {
     this.name = name
-    this.dogs = []
+    this.animals = []
     this.id = generateID(50)
   }
 
-  addDog(dog, owner) {
-    if (dog.canAddOwner()) {
-      dog.setOwner(owner)
-      this.dogs.push(dog)
+  addAnimal(animal, owner) {
+    if (animal.canAddOwner()) {
+      animal.setOwner(owner)
+      this.animals.push(animal)
     }
   }
 
-  displayDogs() {
-    this.dogs.forEach((dog) => {
-      console.log(`${dog.name} is a ${dog.breed} and is owned by ${dog.owner.name} the dogs id is ${dog.id} and the owners id is ${dog.owner.id}`)
+  displayAnimals() {
+    this.animals.forEach((animal) => {
+      console.log(`${animal.name} is a ${animal.breed} and is owned by ${animal.owner.name} the dogs id is ${animal.id} and the owners id is ${animal.owner.id}`)
     })
   }
 }
@@ -64,6 +66,9 @@ class Dog extends Animal {
 }
 
 class Cat extends Animal {
+  speak() {
+    console.log("Meow")
+  }
 }
 
 function generateID(length) {
@@ -80,9 +85,22 @@ var sammy = new Dog("sammy", breeds.PUG, animal_types.DOG)
 var fido = new Dog("fido", breeds.POODLE, animal_types.DOG)
 var jill = new Dog("jill", breeds.GOLDEN_RETREIVER, animal_types.DOG)
 var lina = new Dog("lina", breeds.CORGI, animal_types.DOG)
+var jane = new Cat("jane", breeds.LONG_HAIRED_CAT, animal_types.CAT)
+var silu = new Cat("silu", breeds.LONG_HAIRED_CAT, animal_types.CAT)
+var anabell = new Cat("anabell", breeds.LONG_HAIRED_CAT, animal_types.CAT)
+var lin = new Cat("lin", breeds.TABBY_CAT, animal_types.CAT)
+var inna = new Cat("inna", breeds.TABBY_CAT, animal_types.CAT)
+var linus = new Cat("linus", breeds.TABBY_CAT, animal_types.CAT)
 
-devin.addDog(sammy, devin)
-devin.addDog(jill, devin)
-devin.addDog(fido, devin)
-devin.addDog(lina, devin)
-devin.displayDogs()
+devin.addAnimal(sammy, devin)
+devin.addAnimal(jill, devin)
+devin.addAnimal(fido, devin)
+devin.addAnimal(lina, devin)
+
+devin.addAnimal(jane, devin)
+devin.addAnimal(silu, devin)
+devin.addAnimal(anabell, devin)
+devin.addAnimal(lin, devin)
+devin.addAnimal(inna, devin)
+devin.addAnimal(linus, devin)
+devin.displayAnimals()
