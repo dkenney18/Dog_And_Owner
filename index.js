@@ -40,19 +40,19 @@ class Animal {
     this.name = name
     this.breed = breed
     this.owner = owner
-    this.owned = false
+    this.isOwned = false
     this.type = type
     this.id = generateID(50)
   }
 
    canAddOwner() {
-    return (!this.owned) ? true : false
+    return (!this.isOwned) ? true : false
   }
 
   setOwner(owner) {
     if (this.canAddOwner()) {
       this.owner = owner
-      this.owned = true
+      this.isOwned = true
     }
   }
 
