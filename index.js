@@ -29,7 +29,7 @@ class Owner {
 }
 
 class Dog {
-  constructor(name, breed, owner=null) {
+  constructor(name, breed, owner = null) {
     this.name = name
     this.breed = breed
     this.owner = owner
@@ -48,7 +48,7 @@ class Dog {
     if (this.hasOwner()) {
       this.owner = owner
       this.owned = true
-    } 
+    }
   }
 
   getOwner() {
@@ -56,15 +56,13 @@ class Dog {
   }
 }
 
-function generateID(l)
-{
-var text = "";
-var char_list = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-for(var i=0; i < l; i++ )
-{  
-text += char_list.charAt(Math.floor(Math.random() * char_list.length));
-}
-return text;
+function generateID(length) {
+  var text = ""
+  var char_list = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+  for (var i = 0; i < length; i++) {
+    text += char_list.charAt(Math.floor(Math.random() * char_list.length));
+  }
+  return text
 }
 
 var devin = new Owner("Devin")
