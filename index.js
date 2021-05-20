@@ -81,15 +81,16 @@ function generateID(length) {
 }
 
 var devin = new Owner("Devin")
+var claire = new Owner("Claire")
 
 devin.addAnimal(new Dog("sammy", breeds.PUG, animal_types.DOG), devin)
-devin.addAnimal(new Dog("jill", breeds.GOLDEN_RETREIVER, animal_types.DOG), devin)
+devin.addAnimal(new Dog("jill", breeds.GOLDEN_RETREIVER, animal_types.DOG), claire)
 devin.addAnimal(new Dog("fido", breeds.POODLE, animal_types.DOG), devin)
-devin.addAnimal(new Dog("lina", breeds.CORGI, animal_types.DOG), devin)
+devin.addAnimal(new Dog("lina", breeds.CORGI, animal_types.DOG), claire)
 
 devin.addAnimal(new Cat("jane", breeds.LONG_HAIRED_CAT, animal_types.CAT), devin)
-devin.addAnimal(new Cat("silu", breeds.LONG_HAIRED_CAT, animal_types.CAT), devin)
+devin.addAnimal(new Cat("silu", breeds.LONG_HAIRED_CAT, animal_types.CAT), claire)
 devin.addAnimal(new Cat("anabell", breeds.LONG_HAIRED_CAT, animal_types.CAT), devin)
-devin.addAnimal(new Cat("lin", breeds.TABBY_CAT, animal_types.CAT), devin)
+devin.addAnimal(new Cat("lin", breeds.TABBY_CAT, animal_types.CAT), claire)
 
 devin.displayAnimals()
