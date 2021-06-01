@@ -9,39 +9,41 @@ const breeds = {
   TABBY_CAT: 'tabby cat'
 }
 
-const animal_types = {
-  DOG: 'dog',
-  CAT: 'cat',
-}
-
-class Owner {
+class Entity {
   constructor(name) {
     this.name = name
-    this.animals = []
     this.id = generateID(50)
   }
+}
 
-  addAnimal(animal, owner) {
+class Owner extends Entity {
+  constructor(name) {
+    super(name)
+    this.animals = []
+  }
+
+  addAnimal(animal) {
     if (animal.canAddOwner()) {
-      animal.setOwner(owner)
+      animal.setOwner(this)
       this.animals.push(animal)
     }
   }
 
   displayAnimals() {
     this.animals.forEach((animal) => {
-      console.log(`${animal.name} is a ${animal.breed} and is owned by ${animal.owner.name} the dogs id is ${animal.id} and the owners id is ${animal.owner.id}`)
+      console.log(animal)
+      //console.log(`${animal.name} is a ${animal.breed} and is owned by ${animal.owner.name} the ${animal.constructor.name}'s' id is ${animal.id} and the owners id is ${animal.owner.id}`)
     })
   }
 }
 
 class Animal {
-  constructor(name, breed, type, owner = null) {
+  constructor(name, breed) {
     this.name = name
     this.breed = breed
-    this.owner = owner
+    this.owner = null
+    this.animalType = this.constructor.name
     this.isOwned = false
-    this.type = type
     this.id = generateID(50)
   }
 
@@ -50,26 +52,14 @@ class Animal {
   }
 
   setOwner(owner) {
-    if (this.canAddOwner()) {
-      this.owner = owner
-      this.isOwned = true
-    }
-  }
-
-  speak() {}
-}
-
-class Dog extends Animal {
-  speak() {
-    console.log("Woof")
+    this.owner = owner
+    this.isOwned = true
   }
 }
 
-class Cat extends Animal {
-  speak() {
-    console.log("Meow")
-  }
-}
+class Dog extends Animal {}
+
+class Cat extends Animal {}
 
 function generateID(length) {
   var text = ""
@@ -83,14 +73,16 @@ function generateID(length) {
 var devin = new Owner("Devin")
 var claire = new Owner("Claire")
 
-devin.addAnimal(new Dog("sammy", breeds.PUG, animal_types.DOG), devin)
-devin.addAnimal(new Dog("jill", breeds.GOLDEN_RETREIVER, animal_types.DOG), claire)
-devin.addAnimal(new Dog("fido", breeds.POODLE, animal_types.DOG), devin)
-devin.addAnimal(new Dog("lina", breeds.CORGI, animal_types.DOG), claire)
+devin.addAnimal(new Dog("sammy", breeds.PUG))
+devin.addAnimal(new Dog("jill", breeds.GOLDEN_RETREIVER))
+devin.addAnimal(new Dog("fido", breeds.POODLE))
+devin.addAnimal(new Dog("lina", breeds.CORGI))
 
-devin.addAnimal(new Cat("jane", breeds.LONG_HAIRED_CAT, animal_types.CAT), devin)
-devin.addAnimal(new Cat("silu", breeds.LONG_HAIRED_CAT, animal_types.CAT), claire)
-devin.addAnimal(new Cat("anabell", breeds.LONG_HAIRED_CAT, animal_types.CAT), devin)
-devin.addAnimal(new Cat("lin", breeds.TABBY_CAT, animal_types.CAT), claire)
+claire.addAnimal(new Cat("jane", breeds.LONG_HAIRED_CAT))
+claire.addAnimal(new Cat("silu", breeds.LONG_HAIRED_CAT))
+claire.addAnimal(new Cat("anabell", breeds.LONG_HAIRED_CAT))
+claire.addAnimal(new Cat("lin", breeds.TABBY_CAT))
+
 
 devin.displayAnimals()
+claire.displayAnimals()
