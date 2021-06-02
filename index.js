@@ -1,12 +1,11 @@
-const breeds = {
-  PUG: 'pug',
-  POODLE: 'poodle',
-  CORGI: 'corgi',
-  GOLDEN_RETREIVER: 'golden_retreiver',
-  TERRIER: 'terrier',
-  LABRADOOR: 'labradoor',
-  LONG_HAIRED_CAT: 'long_haired_cat',
-  TABBY_CAT: 'tabby cat'
+class Enum {
+  constructor() {
+    this.enum = {}
+  }
+
+  add(name) {
+    this.enum[name] = name.toLowerCase()
+  }
 }
 
 class Entity {
@@ -39,10 +38,11 @@ class Owner extends Entity {
 
 class Animal {
   constructor(name, breed) {
+    animalTypes.add(this.constructor.name.toUpperCase())
     this.name = name
     this.breed = breed
     this.owner = null
-    this.animalType = this.constructor.name
+    this.animalType = animalTypes.enum[this.constructor.name.toUpperCase()]
     this.isOwned = false
     this.id = generateID(50)
   }
@@ -58,8 +58,51 @@ class Animal {
 }
 
 class Dog extends Animal {}
-
 class Cat extends Animal {}
+class Cow extends Animal {}
+class Fish extends Animal {}
+
+class Breeds extends Enum {}
+class AnimalTypes extends Enum {}
+
+//set this up so that each class can add it's own type automagically
+const animalTypes = new AnimalTypes()
+
+//register breeds and types of animals
+const breeds = new Breeds()
+breeds.add('PUG')
+breeds.add('POODLE')
+breeds.add('CORGI')
+breeds.add('GOLDEN_RETREIVER')
+breeds.add('TERRIER')
+breeds.add('LABRADOOR')
+breeds.add('LONG_HAIRED_CAT')
+breeds.add('TABBY_CAT')
+breeds.add('BLACK_AND_WHITE')
+breeds.add('KOI')
+
+var devin = new Owner("Devin")
+var claire = new Owner("Claire")
+
+devin.addAnimal(new Dog("sammy", breeds.enum.PUG))
+devin.addAnimal(new Dog("jill", breeds.enum.GOLDEN_RETREIVER))
+devin.addAnimal(new Dog("fido", breeds.enum.POODLE))
+devin.addAnimal(new Dog("lina", breeds.enum.CORGI))
+devin.addAnimal(new Cow("json", breeds.enum.BLACK_AND_WHITE))
+
+claire.addAnimal(new Cat("jane", breeds.enum.LONG_HAIRED_CAT))
+claire.addAnimal(new Cat("silu", breeds.enum.LONG_HAIRED_CAT))
+claire.addAnimal(new Cat("anabell", breeds.enum.LONG_HAIRED_CAT))
+claire.addAnimal(new Cat("lin", breeds.enum.TABBY_CAT))
+claire.addAnimal(new Fish("james", breeds.enum.KOI))
+
+
+devin.displayAnimals()
+claire.displayAnimals()
+
+console.log(animalTypes.enum)
+console.log(breeds.enum)
+
 
 function generateID(length) {
   var text = ""
@@ -69,20 +112,3 @@ function generateID(length) {
   }
   return text
 }
-
-var devin = new Owner("Devin")
-var claire = new Owner("Claire")
-
-devin.addAnimal(new Dog("sammy", breeds.PUG))
-devin.addAnimal(new Dog("jill", breeds.GOLDEN_RETREIVER))
-devin.addAnimal(new Dog("fido", breeds.POODLE))
-devin.addAnimal(new Dog("lina", breeds.CORGI))
-
-claire.addAnimal(new Cat("jane", breeds.LONG_HAIRED_CAT))
-claire.addAnimal(new Cat("silu", breeds.LONG_HAIRED_CAT))
-claire.addAnimal(new Cat("anabell", breeds.LONG_HAIRED_CAT))
-claire.addAnimal(new Cat("lin", breeds.TABBY_CAT))
-
-
-devin.displayAnimals()
-claire.displayAnimals()
