@@ -4,7 +4,7 @@ class Enum {
   }
 
   add(name) {
-    this.enum[name] = name.toLowerCase()
+    this.enum[name.toUpperCase()] = name.toLowerCase()
   }
 }
 
@@ -17,11 +17,11 @@ class Entity {
 
 class Animal {
   constructor(name, breed) {
-    animalTypes.add(this.constructor.name.toUpperCase())
+    animalTypes.add(this.constructor.name)
     this.name = name
     this.breed = breed
     this.owner = null
-    this.animalType = animalTypes.enum[this.constructor.name.toUpperCase()]
+    this.animalType = animalTypes.enum[this.constructor.name]
     this.isOwned = false
     this.id = generateID(50)
   }
