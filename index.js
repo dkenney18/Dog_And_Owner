@@ -62,6 +62,7 @@ class Dog extends Animal {}
 class Cat extends Animal {}
 class Cow extends Animal {}
 class Fish extends Animal {}
+class Goldfish extends Fish {}
 //End Region Class Definitions 
 
 //Region Enums
