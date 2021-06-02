@@ -86,10 +86,10 @@ devin.addAnimal(new Dog("fido", new Breed('Poodle')))
 devin.addAnimal(new Dog("lina", new Breed('Corgi')))
 devin.addAnimal(new Cow("jason", new Breed('Black and white')))
 
-claire.addAnimal(new Cat("jane", new Breed('Long Haired Cat')))
-claire.addAnimal(new Cat("silu", new Breed('Long Haired Cat')))
-claire.addAnimal(new Cat("anabell", new Breed('Long Haired Cat')))
-claire.addAnimal(new Cat("lin",new Breed('Tabby Cat')))
+claire.addAnimal(new Cat("jane", new Breed('Long Haired')))
+claire.addAnimal(new Cat("silu", new Breed('Long Haired')))
+claire.addAnimal(new Cat("anabell", new Breed('Long Haired')))
+claire.addAnimal(new Cat("lin",new Breed('Tabby')))
 claire.addAnimal(new Fish("james", new Breed('Koi')))
 
 
