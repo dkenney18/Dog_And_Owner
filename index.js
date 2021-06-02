@@ -51,9 +51,15 @@ class Owner extends Entity {
 
   displayAnimals() {
     this.animals.forEach((animal) => {
-      console.log(animal)
-      //console.log(`${animal.name} is a ${animal.breed} and is owned by ${animal.owner.name} the ${animal.constructor.name}'s' id is ${animal.id} and the owners id is ${animal.owner.id}`)
+      //console.log(animal)
+      console.log(`${animal.name} is a ${animal.breed.name} and is owned by ${animal.owner.name} the ${animal.constructor.name}'s' id is ${animal.id} and the owners id is ${animal.owner.id}`)
     })
+  }
+}
+
+class Breed {
+  constructor(name) {
+    this.name = name
   }
 }
 
@@ -62,50 +68,35 @@ class Dog extends Animal {}
 class Cat extends Animal {}
 class Cow extends Animal {}
 class Fish extends Animal {}
-class Goldfish extends Fish {}
 //End Region Class Definitions 
 
 //Region Enums
-class Breeds extends Enum {}
 class AnimalTypes extends Enum {}
 //End Region Enums
 
 //set this up so that each class can add it's own type automagically
 const animalTypes = new AnimalTypes()
 
-const breeds = new Breeds()
-breeds.add('PUG')
-breeds.add('POODLE')
-breeds.add('CORGI')
-breeds.add('GOLDEN_RETREIVER')
-breeds.add('TERRIER')
-breeds.add('LABRADOOR')
-breeds.add('LONG_HAIRED_CAT')
-breeds.add('TABBY_CAT')
-breeds.add('BLACK_AND_WHITE')
-breeds.add('KOI')
-
 var devin = new Owner("Devin")
 var claire = new Owner("Claire")
 
-devin.addAnimal(new Dog("sammy", breeds.enum.PUG))
-devin.addAnimal(new Dog("jill", breeds.enum.GOLDEN_RETREIVER))
-devin.addAnimal(new Dog("fido", breeds.enum.POODLE))
-devin.addAnimal(new Dog("lina", breeds.enum.CORGI))
-devin.addAnimal(new Cow("json", breeds.enum.BLACK_AND_WHITE))
+devin.addAnimal(new Dog("sammy", new Breed('Pug')))
+devin.addAnimal(new Dog("jill", new Breed('Golder Retrever')))
+devin.addAnimal(new Dog("fido", new Breed('Poodle')))
+devin.addAnimal(new Dog("lina", new Breed('Corgi')))
+devin.addAnimal(new Cow("jason", new Breed('Black and white')))
 
-claire.addAnimal(new Cat("jane", breeds.enum.LONG_HAIRED_CAT))
-claire.addAnimal(new Cat("silu", breeds.enum.LONG_HAIRED_CAT))
-claire.addAnimal(new Cat("anabell", breeds.enum.LONG_HAIRED_CAT))
-claire.addAnimal(new Cat("lin", breeds.enum.TABBY_CAT))
-claire.addAnimal(new Fish("james", breeds.enum.KOI))
+claire.addAnimal(new Cat("jane", new Breed('Long Haired Cat')))
+claire.addAnimal(new Cat("silu", new Breed('Long Haired Cat')))
+claire.addAnimal(new Cat("anabell", new Breed('Long Haired Cat')))
+claire.addAnimal(new Cat("lin",new Breed('Tabby Cat')))
+claire.addAnimal(new Fish("james", new Breed('Koi')))
 
 
 devin.displayAnimals()
 claire.displayAnimals()
 
 console.log(animalTypes.enum)
-console.log(breeds.enum)
 
 
 function generateID(length) {
