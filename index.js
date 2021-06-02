@@ -15,27 +15,6 @@ class Entity {
   }
 }
 
-class Owner extends Entity {
-  constructor(name) {
-    super(name)
-    this.animals = []
-  }
-
-  addAnimal(animal) {
-    if (animal.canAddOwner()) {
-      animal.setOwner(this)
-      this.animals.push(animal)
-    }
-  }
-
-  displayAnimals() {
-    this.animals.forEach((animal) => {
-      console.log(animal)
-      //console.log(`${animal.name} is a ${animal.breed} and is owned by ${animal.owner.name} the ${animal.constructor.name}'s' id is ${animal.id} and the owners id is ${animal.owner.id}`)
-    })
-  }
-}
-
 class Animal {
   constructor(name, breed) {
     animalTypes.add(this.constructor.name.toUpperCase())
@@ -57,18 +36,42 @@ class Animal {
   }
 }
 
+class Owner extends Entity {
+  constructor(name) {
+    super(name)
+    this.animals = []
+  }
+
+  addAnimal(animal) {
+    if (animal.canAddOwner()) {
+      animal.setOwner(this)
+      this.animals.push(animal)
+    }
+  }
+
+  displayAnimals() {
+    this.animals.forEach((animal) => {
+      console.log(animal)
+      //console.log(`${animal.name} is a ${animal.breed} and is owned by ${animal.owner.name} the ${animal.constructor.name}'s' id is ${animal.id} and the owners id is ${animal.owner.id}`)
+    })
+  }
+}
+
+//Region Class Definitions 
 class Dog extends Animal {}
 class Cat extends Animal {}
 class Cow extends Animal {}
 class Fish extends Animal {}
+//End Region Class Definitions 
 
+//Region Enums
 class Breeds extends Enum {}
 class AnimalTypes extends Enum {}
+//End Region Enums
 
 //set this up so that each class can add it's own type automagically
 const animalTypes = new AnimalTypes()
 
-//register breeds and types of animals
 const breeds = new Breeds()
 breeds.add('PUG')
 breeds.add('POODLE')
