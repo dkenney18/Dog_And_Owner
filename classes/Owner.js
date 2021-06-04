@@ -11,6 +11,7 @@ class Owner extends Entity {
       animal.setOwner(this)
       this.animals.push(animal)
     }
+    return this
   }
 
   displayAnimals() {
