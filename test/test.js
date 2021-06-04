@@ -18,9 +18,11 @@ var should = require('chai').should()
 
 
 //setup
+class Apple extends Food {}
 var pug = new Breed("Pug", 0)
 var dog = new Dog("Sam", pug)
 var devin = new Owner("Devin")
+var apple = new Apple(0)
 
 describe('Breed', function () {
   describe('#Name', function () {
@@ -63,6 +65,30 @@ describe('Animal', function () {
       assert.strictEqual(typeof dog.name, typeof "Sam")
     })
   })
+
+  describe('#AnimalType', function () {
+    it('should return Name passed', function () {
+      assert.strictEqual(dog.animalType, "dog")
+    })
+  })
+
+  describe('#AnimalType', function () {
+    it('should return Name as String', function () {
+      assert.strictEqual(typeof dog.animalType, typeof "")
+    })
+  })
+
+  describe('#ID', function () {
+    it('should return ID as string', function () {
+      assert.strictEqual(typeof dog.id, typeof "")
+    });
+  });
+
+  describe('#ID', function () {
+    it('ID length should be 50', function () {
+      assert.strictEqual(dog.id.length, 50)
+    });
+  });
 
   describe('#Breed', function () {
     it('should return Name passed', function () {
@@ -138,7 +164,7 @@ describe('Owner', function () {
   });
 
   describe('#Array', function () {
-    it('should return empty array', function () {
+    it('should return empty array when no animals have been added', function () {
       assert.strictEqual(devin.animals.length, 0)
     });
   });
@@ -165,3 +191,41 @@ describe('Owner', function () {
     });
   });
 });
+
+describe('Food', function() {
+  describe('#Name', function () {
+    it('should return Name passed', function () {
+      assert.strictEqual(apple.name, "Apple")
+    })
+  })
+
+  describe('#Name', function () {
+    it('should return Name as String', function () {
+      assert.strictEqual(typeof apple.name, typeof "Sam")
+    })
+  })
+
+  describe('#ID', function () {
+    it('should return ID as string', function () {
+      assert.strictEqual(typeof apple.id, typeof "")
+    });
+  });
+
+  describe('#ID', function () {
+    it('ID length should be 50', function () {
+      assert.strictEqual(apple.id.length, 50)
+    });
+  });
+
+  describe('#Food Points', function () {
+    it('should return Food Points passed', function () {
+      assert.strictEqual(apple.foodPoints, 0)
+    });
+  });
+
+  describe('#Food Points', function () {
+    it('should return Food Points as int', function () {
+      assert.strictEqual(typeof apple.foodPoints, typeof 0)
+    });
+  });
+})
