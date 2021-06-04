@@ -21,7 +21,7 @@ class Animal {
     this.name = name
     this.breed = breed
     this.owner = null
-    this.animalType = animalTypes.enum[this.constructor.name]
+    this.animalType = animalTypes.enum[this.constructor.name.toUpperCase()]
     this.isOwned = false
     this.id = generateID(50)
   }
@@ -51,8 +51,8 @@ class Owner extends Entity {
 
   displayAnimals() {
     this.animals.forEach((animal) => {
-      //console.log(animal)
-      console.log(`${animal.name} is a ${animal.breed.name} and is owned by ${animal.owner.name} the ${animal.constructor.name}'s' id is ${animal.id} and the owners id is ${animal.owner.id}`)
+      console.log(animal)
+      //console.log(`${animal.name} is a ${animal.breed.name} and is owned by ${animal.owner.name} the ${animal.constructor.name}'s' id is ${animal.id} and the owners id is ${animal.owner.id}`)
     })
   }
 }
