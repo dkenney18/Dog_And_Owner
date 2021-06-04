@@ -14,6 +14,17 @@ class Owner extends Entity {
     return this
   }
 
+  getAnimalByName(name) {
+    for (let i = 0; i < this.animals.length; i++) {
+      const element = this.animals[i];
+
+      if (element.name == name) {
+        return element
+      }
+      
+    }
+  }
+
   displayAnimals() {
     this.animals.forEach((animal) => {
       console.log(animal)

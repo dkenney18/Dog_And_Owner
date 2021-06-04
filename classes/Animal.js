@@ -15,6 +15,7 @@ class Animal {
     this.animalType = animalTypes.enum[this.constructor.name.toUpperCase()]
     this.isOwned = false
     this.id = generateID(50)
+    this.hp = breed.hp
   }
 
    canAddOwner() {
@@ -24,6 +25,12 @@ class Animal {
   setOwner(owner) {
     this.owner = owner
     this.isOwned = true
+  }
+
+  eat(food) {
+    console.log("Ate: " + food.name)
+    this.hp += food.foodPoints
+    return this
   }
 }
 

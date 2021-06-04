@@ -1,6 +1,7 @@
 class Breed {
-  constructor(name) {
+  constructor(name, hp) {
     this.name = name
+    this.hp = hp
   }
 }
 
