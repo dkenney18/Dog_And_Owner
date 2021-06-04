@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/dkenney18/Dog_And_Owner#readme",
   "dependencies": {
+    "chai": "^4.3.4",
+    "chi": "0.0.10",
     "mocha": "^8.4.0"
   }
 }
