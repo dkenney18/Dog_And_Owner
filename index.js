@@ -1,9 +1,6 @@
-const { Enum } = require("./classes/base/Enum.js")
-const { Entity } = require("./classes/base/Entity.js")
 const { Breed } = require("./classes/base/Breed.js")
 const { Animal } = require("./classes/Animal.js")
 const { Owner } = require("./classes/Owner.js")
-const generateID = require("./classes/base/Utility/GenerateID.js")
 
 class Dog extends Animal { }
 class Cat extends Animal { }
@@ -19,6 +16,7 @@ devin
   .addAnimal(new Dog("fido", new Breed('Poodle')))
   .addAnimal(new Dog("lina", new Breed('Corgi')))
   .addAnimal(new Cow("jason", new Breed('Black and white')))
+  .addAnimal(new Dog("Lisa", new Breed("Boxer")))
 
 claire
   .addAnimal(new Cat("jane", new Breed('Long Haired')))
@@ -26,6 +24,7 @@ claire
   .addAnimal(new Cat("anabell", new Breed('Long Haired')))
   .addAnimal(new Cat("lin", new Breed('Tabby')))
   .addAnimal(new Fish("james", new Breed('Koi')))
+  .addAnimal(new Cow("Lorry", new Breed("Brown")))
 
 
 devin.displayAnimals()
