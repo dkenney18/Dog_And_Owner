@@ -51,6 +51,18 @@ describe('Breed', function () {
       assert.strictEqual(typeof pug.hp, typeof 0)
     });
   });
+
+  describe('#ID', function () {
+    it('should return ID as string', function () {
+      assert.strictEqual(typeof pug.id, typeof "")
+    });
+  });
+
+  describe('#ID', function () {
+    it('ID length should be 50', function () {
+      assert.strictEqual(pug.id.length, 50)
+    });
+  });
 });
 
 describe('Animal', function () {
