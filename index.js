@@ -5,6 +5,7 @@ class Enum {
 
   add(name) {
     this.enum[name.toUpperCase()] = name.toLowerCase()
+    return this
   }
 }
 
