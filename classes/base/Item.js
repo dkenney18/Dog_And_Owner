@@ -1,10 +1,8 @@
 const generateID = require("./Utility/GenerateID")
 
 class Item {
-    constructor(itemObject) {
-        this.name = itemObject.name
-        this.value = itemObject.value
-        this.damage = itemObject.damage
+    constructor() {
+        this.name = this.constructor.name
         this.id = generateID(50)
     }
 }

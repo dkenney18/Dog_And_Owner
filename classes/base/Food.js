@@ -1,9 +1,9 @@
 const {Item} = require("./Item")
 
 class Food extends Item {
-    constructor(foodObject) {
-      this.name = foodObject.name
-      this.foodPoints = foodObject.foodPoints
+    constructor(foodPoints) {
+        super()
+      this.foodPoints = foodPoints
     }
   }
   

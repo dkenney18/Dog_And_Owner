@@ -1,11 +1,18 @@
 const { Breed } = require("./classes/base/Breed.js")
 const { Animal } = require("./classes/Animal.js")
 const { Owner } = require("./classes/Owner.js")
+const { Food } = require("./classes/base/Food")
 
 class Dog extends Animal { }
 class Cat extends Animal { }
 class Cow extends Animal { }
 class Fish extends Animal { }
+
+class Apple extends Food { }
+class Orange extends Food { }
+class Mango extends Food { }
+class Pear extends Food { }
+
 
 var devin = new Owner("Devin")
 var claire = new Owner("Claire")
@@ -29,3 +36,8 @@ claire
 
 devin.displayAnimals()
 claire.displayAnimals()
+
+console.log(new Apple(10).name)
+console.log(new Orange(10).name)
+console.log(new Mango(10).name)
+console.log(new Pear(10).name)
