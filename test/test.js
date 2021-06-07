@@ -187,7 +187,7 @@ describe('Animal', function () {
   });
 
 describe('#Location', function () {
-  
+
    it('should exsist', function () {
       should.exist(dog.location)
     });
