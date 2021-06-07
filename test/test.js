@@ -328,6 +328,32 @@ describe('Owner', function () {
     });
   });
 
+  describe('#getAnimalByName', function () {
+    it('should return animal', function () {
+      var pug2 = new Breed("Pug", 0)
+      var dog2 = new Dog("Sam", pug)
+      var devin2 = new Owner("Devin")
+      devin2.addAnimal(dog2)
+
+      var pet = devin2.getAnimalByName("Sam")
+
+      assert.strictEqual(pet.name, dog2.name)
+      assert.strictEqual(pet.breed, dog2.breed)
+      assert.strictEqual(pet.breed.name, dog2.breed.name)
+      assert.strictEqual(pet.breed.hp, dog2.breed.hp)
+      assert.strictEqual(pet.owner, dog2.owner)
+      assert.strictEqual(pet.owner.name, dog2.owner.name)
+      assert.strictEqual(pet.animalType, dog2.animalType)
+      assert.strictEqual(pet.isOwned, dog2.isOwned)
+      assert.strictEqual(pet.hp, dog2.hp)
+      assert.strictEqual(pet.location, dog2.location)
+      assert.strictEqual(pet.location.x, dog2.location.x)
+      assert.strictEqual(pet.location.y, dog2.location.y)
+      assert.strictEqual(pet.direction, dog2.direction)
+      assert.strictEqual(pet, dog2)
+    });
+  });
+
   describe('#Should contain functions', function() {
      it('addAnimal() exists', function () {
      devin.addAnimal.should.be.a('function')

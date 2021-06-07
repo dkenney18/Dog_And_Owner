@@ -17,6 +17,10 @@ class Pear extends Food { }
 
 var devin = new Owner("Devin")
 var claire = new Owner("Claire")
+var apple = new Apple(10)
+var orange = new Orange(4)
+var mango = new Mango(7)
+var pear = new Pear(15)
 
 
 devin
