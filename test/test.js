@@ -210,16 +210,28 @@ describe('#Location', function () {
         assert.strictEqual(dog.location.y, 5)
     });
 
-     it('addX should add the number passed to x', function () {
-      dog.setX(0)
-      dog.addX(10)
-      assert.strictEqual(dog.location.x, 10)
+     it('left should subtract the number passed from num', function () {
+      dog.setX(10)
+      dog.left(10)
+      assert.strictEqual(dog.location.x, 0)
     });
 
-    it('addY should set the number passed to y', function () {
-        dog.setY(0)
-        dog.addY(5)
-        assert.strictEqual(dog.location.y, 5)
+     it('right should add the number passed from num', function () {
+      dog.setX(10)
+      dog.right(10)
+      assert.strictEqual(dog.location.x, 20)
+    });
+
+ it('up should add the number passed from num', function () {
+      dog.setY(10)
+      dog.up(10)
+      assert.strictEqual(dog.location.y, 20)
+    });
+
+     it('down should subtract the number passed from num', function () {
+      dog.setY(10)
+      dog.down(10)
+      assert.strictEqual(dog.location.y, 0)
     });
 
      it('2 properties', function() {

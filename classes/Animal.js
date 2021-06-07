@@ -44,16 +44,24 @@ class Animal {
     this.location.y = num
   }
 
-  addX(num) {
+  left(num) {
+    this.location.x -= num
+  }
+
+  right(num) {
     this.location.x += num
   }
 
-  addY(num) {
+  up(num) {
     this.location.y += num
   }
 
+  down(num) {
+    this.location.y -= num
+  }
+
   setDirection(directionEnum) {
-    this.direction = direction[directionEnum.toUpperCase()]
+    this.direction = directionEnum
   }
 }
 
