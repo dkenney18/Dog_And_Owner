@@ -43,9 +43,7 @@ describe('Breed', function () {
     it('should return Name passed', function () {
       assert.strictEqual(pug.name, "Pug")
     });
-  });
 
-  describe('#Name', function () {
     it('should return Name as string', function () {
       assert.strictEqual(typeof pug.name, typeof "")
     });
@@ -55,9 +53,7 @@ describe('Breed', function () {
     it('should return HP passed', function () {
       assert.strictEqual(pug.hp, 0)
     });
-  });
 
-  describe('#HP', function () {
     it('should return HP as int', function () {
       assert.strictEqual(typeof pug.hp, typeof 0)
     });
@@ -67,23 +63,19 @@ describe('Breed', function () {
     it('should return ID as string', function () {
       assert.strictEqual(typeof pug.id, typeof "")
     });
-  });
 
-  describe('#ID', function () {
     it('ID length should be 50', function () {
       assert.strictEqual(pug.id.length, 50)
     });
   });
-});
+  });
 
 describe('Animal', function () {
   describe('#Name', function () {
     it('should return Name passed', function () {
       assert.strictEqual(dog.name, "Sam")
     })
-  })
 
-  describe('#Name', function () {
     it('should return Name as String', function () {
       assert.strictEqual(typeof dog.name, typeof "")
     })
@@ -93,10 +85,8 @@ describe('Animal', function () {
     it('should return Name passed', function () {
       assert.strictEqual(dog.animalType, "dog")
     })
-  })
 
-  describe('#AnimalType', function () {
-    it('should return Name as String', function () {
+     it('should return Name as String', function () {
       assert.strictEqual(typeof dog.animalType, typeof "")
     })
   })
@@ -105,9 +95,7 @@ describe('Animal', function () {
     it('should return ID as string', function () {
       assert.strictEqual(typeof dog.id, typeof "")
     });
-  });
 
-  describe('#ID', function () {
     it('ID length should be 50', function () {
       assert.strictEqual(dog.id.length, 50)
     });
@@ -117,22 +105,13 @@ describe('Animal', function () {
     it('should return Name passed', function () {
       assert.strictEqual(pug.name, "Pug")
     });
-  });
-
-  describe('#Breed', function () {
     it('should return Name as string', function () {
       assert.strictEqual(typeof pug.name, typeof "")
     });
-  });
-
-  describe('#Breed', function () {
-    it('should return HP passed', function () {
+      it('should return HP passed', function () {
       assert.strictEqual(pug.hp, 0)
     });
-  });
-
-  describe('#Breed', function () {
-    it('should return HP as int', function () {
+     it('should return HP as int', function () {
       assert.strictEqual(typeof pug.hp, typeof 0)
     });
   });
@@ -153,9 +132,6 @@ describe('Animal', function () {
       assert.strictEqual(dog.isOwned, true)
     });
 
-     it('setOwner() exists', function () {
-     dog.setOwner.should.be.a('function')
-    });
     it('owner is exsists when added', function () {
       dog.setOwner(devin)
       should.exist(dog.owner)
@@ -166,15 +142,13 @@ describe('Animal', function () {
       assert.strictEqual(dog.owner.name, "Devin")
     });
   });
-  
+
    describe('#Eat', function () {
     it('should exsist', function () {
        dog.eat.should.be.a('function');
     });
-  });
 
-   describe('#Eat', function () {
-    it('should increase animal HP by Foods food points', function () {
+     it('should increase animal HP by Foods food points', function () {
       dog.hp = 0
       dog.eat(apple)
       assert.strictEqual(dog.hp, 1)
@@ -348,22 +322,32 @@ describe('Owner', function () {
     it('should return Name passed', function () {
       assert.strictEqual(devin.name, "Devin")
     });
-  });
 
-  describe('#Name', function () {
-    it('should return Name as string', function () {
+     it('should return Name as string', function () {
       assert.strictEqual(typeof devin.name, typeof "")
     });
   });
+
+  describe('#Should contain functions', function() {
+     it('addAnimal() exists', function () {
+     devin.addAnimal.should.be.a('function')
+    });
+
+    it('getAnimalByName() exists', function () {
+     devin.getAnimalByName.should.be.a('function')
+    });
+
+    it('displayAnimals() exists', function () {
+     devin.displayAnimals.should.be.a('function')
+    });
+  })
 
   describe('#Array', function () {
     it('should return empty array when no animals have been added', function () {
       assert.strictEqual(devin.animals.length, 0)
     });
-  });
 
-  describe('#Array', function () {
-    it('should return length 1 when animal added', function () {
+     it('should return length 1 when animal added', function () {
       var claire = new Owner("Claire")
       var poodle = new Breed("Poodle")
       var dog1 = new Dog("lam", poodle)
@@ -376,9 +360,6 @@ describe('Owner', function () {
     it('should return ID as string', function () {
       assert.strictEqual(typeof devin.id, typeof "")
     });
-  });
-
-  describe('#ID', function () {
     it('ID length should be 50', function () {
       assert.strictEqual(devin.id.length, 50)
     });
@@ -390,10 +371,7 @@ describe('Food', function() {
     it('should return Name passed', function () {
       assert.strictEqual(apple.name, "Apple")
     })
-  })
-
-  describe('#Name', function () {
-    it('should return Name as String', function () {
+     it('should return Name as String', function () {
       assert.strictEqual(typeof apple.name, typeof "")
     })
   })
@@ -402,9 +380,6 @@ describe('Food', function() {
     it('should return ID as string', function () {
       assert.strictEqual(typeof apple.id, typeof "")
     });
-  });
-
-  describe('#ID', function () {
     it('ID length should be 50', function () {
       assert.strictEqual(apple.id.length, 50)
     });
@@ -414,9 +389,6 @@ describe('Food', function() {
     it('should return Food Points passed', function () {
       assert.strictEqual(apple.foodPoints, 1)
     });
-  });
-
-  describe('#Food Points', function () {
     it('should return Food Points as int', function () {
       assert.strictEqual(typeof apple.foodPoints, typeof 1)
     });
