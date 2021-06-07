@@ -293,33 +293,26 @@ describe('#Location', function () {
        dog.setDirection(direction.enum.DOWN)
          assert.strictEqual(dog.direction, 'down')
     });
-
-
      it('should return north as string when set', function () {
        dog.setDirection(direction.enum.NORHT)
         assert.strictEqual(typeof dog.direction, typeof '')
     });
-
      it('should return south as string when set', function () {
        dog.setDirection(direction.enum.SOUTH)
          assert.strictEqual(typeof dog.direction, typeof '')
     });
-
      it('should return east as string when set', function () {
        dog.setDirection(direction.enum.EAST)
          assert.strictEqual(typeof dog.direction, typeof '')
     });
-
      it('should return west as string when set', function () {
        dog.setDirection(direction.enum.WEST)
          assert.strictEqual(typeof dog.direction, typeof '')
     });
-
      it('should return up as string when set', function () {
        dog.setDirection(direction.enum.UP)
          assert.strictEqual(typeof dog.directionP, typeof '')
     });
-
      it('should return down as string when set', function () {
        dog.setDirection(direction.enum.DOWN)
          assert.strictEqual(typeof dog.direction, typeof '')
