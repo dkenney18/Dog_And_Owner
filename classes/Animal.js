@@ -1,4 +1,5 @@
 const {Enum} = require("./base/Enum.js")
+const {Location} = require("./base/Location.js")
 const generateID = require("./base/Utility/GenerateID.js")
 
 class AnimalTypes extends Enum {}
@@ -16,6 +17,7 @@ class Animal {
     this.isOwned = false
     this.id = generateID(50)
     this.hp = breed.hp
+    this.location = new Location()
   }
 
    canAddOwner() {
@@ -30,6 +32,22 @@ class Animal {
   eat(food) {
     this.hp += food.foodPoints
     return this
+  }
+
+  setX(num) {
+    this.location.x = num
+  }
+
+  setY(num) {
+    this.location.y = num
+  }
+
+  addX(num) {
+    this.location.x += num
+  }
+
+  addY(num) {
+    this.location.y += num
   }
 }
 
