@@ -141,37 +141,32 @@ describe('Animal', function () {
     it('should return null when not assigned an owner', function () {
       assert.strictEqual(typeof dog.owner, typeof null)
     });
-  });
 
-  describe('#Owner', function () {
-    it('can add owner', function () {
+     it('can add owner', function () {
       dog.setOwner(devin)
       assert.strictEqual(dog.isOwned, true)
       assert.strictEqual(dog.owner.name, "Devin")
     });
-  });
 
-  describe('#Owner', function () {
-    it('isOwned is set when new owner is added', function () {
+     it('isOwned is set when new owner is added', function () {
       dog.setOwner(devin)
       assert.strictEqual(dog.isOwned, true)
     });
-  });
 
-  describe('#Owner', function () {
+     it('setOwner() exists', function () {
+     dog.setOwner.should.be.a('function')
+    });
     it('owner is exsists when added', function () {
       dog.setOwner(devin)
       should.exist(dog.owner)
     });
-  });
 
-  describe('#Owner', function () {
     it('owner name matches name passed', function () {
       dog.setOwner(devin)
       assert.strictEqual(dog.owner.name, "Devin")
     });
   });
-
+  
    describe('#Eat', function () {
     it('should exsist', function () {
        dog.eat.should.be.a('function');
