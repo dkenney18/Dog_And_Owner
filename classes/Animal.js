@@ -1,6 +1,5 @@
 const {Enum} = require("./base/Enum.js")
 const {Location} = require("./base/Location.js")
-const direction = require("./base/Direction.js")
 const generateID = require("./base/Utility/GenerateID.js")
 
 class AnimalTypes extends Enum {}

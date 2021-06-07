@@ -17,9 +17,6 @@ const {
 const {
   Location
 } = require("../classes/base/Location")
-
-const direction = require("../classes/base/Direction")
-
 const generateID = require('../classes/base/Utility/GenerateID')
 
 class Dog extends Animal {}
