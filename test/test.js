@@ -259,6 +259,72 @@ describe('#Location', function () {
        assert.strictEqual(location1.y, 1)
     })
   })
+
+   describe('#Direction', function() {
+      it('should have property direction', function () {
+        should.exist(dog.direction)
+    });
+
+     it('should have function setDirection()', function () {
+        should.exist(dog.setDirection(""))
+    });
+
+     it('should return north when set', function () {
+       dog.setDirection(direction.enum.NORTH)
+       assert.strictEqual(dog.direction, 'north')
+    });
+     it('should return south when set', function () {
+       dog.setDirection(direction.enum.SOUTH)
+         assert.strictEqual(dog.direction, 'south')
+    });
+     it('should return east when set', function () {
+       dog.setDirection(direction.enum.EAST)
+         assert.strictEqual(dog.direction, 'east')
+    });
+     it('should return west when set', function () {
+       dog.setDirection(direction.enum.WEST)
+         assert.strictEqual(dog.direction, 'west')
+    });
+     it('should return up when set', function () {
+       dog.setDirection(direction.enum.UP)
+         assert.strictEqual(dog.direction, 'up')
+    });
+     it('should return down when set', function () {
+       dog.setDirection(direction.enum.DOWN)
+         assert.strictEqual(dog.direction, 'down')
+    });
+
+
+     it('should return north as string when set', function () {
+       dog.setDirection(direction.enum.NORHT)
+        assert.strictEqual(typeof dog.direction, typeof '')
+    });
+
+     it('should return south as string when set', function () {
+       dog.setDirection(direction.enum.SOUTH)
+         assert.strictEqual(typeof dog.direction, typeof '')
+    });
+
+     it('should return east as string when set', function () {
+       dog.setDirection(direction.enum.EAST)
+         assert.strictEqual(typeof dog.direction, typeof '')
+    });
+
+     it('should return west as string when set', function () {
+       dog.setDirection(direction.enum.WEST)
+         assert.strictEqual(typeof dog.direction, typeof '')
+    });
+
+     it('should return up as string when set', function () {
+       dog.setDirection(direction.enum.UP)
+         assert.strictEqual(typeof dog.directionP, typeof '')
+    });
+
+     it('should return down as string when set', function () {
+       dog.setDirection(direction.enum.DOWN)
+         assert.strictEqual(typeof dog.direction, typeof '')
+    });
+  })
 })
 
 describe('Owner', function () {
@@ -372,7 +438,6 @@ describe('generateID', function () {
 
 describe('directions', function () {
  describe('#Has', function() {
-
       it('should have property enum', function () {
         should.exist(direction.enum)
     });
