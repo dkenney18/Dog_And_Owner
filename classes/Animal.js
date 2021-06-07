@@ -28,7 +28,6 @@ class Animal {
   }
 
   eat(food) {
-    console.log("Ate: " + food.name)
     this.hp += food.foodPoints
     return this
   }

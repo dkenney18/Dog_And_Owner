@@ -1,28 +1,35 @@
 const {
   Breed
 } = require("../classes/base/Breed.js")
+
 const {
   Animal
 } = require("../classes/Animal.js")
+
 const {
   Owner
 } = require("../classes/Owner.js")
+
 const {
   Food
 } = require("../classes/base/Food")
+
+const generateID = require('../classes/base/Utility/GenerateID')
 
 class Dog extends Animal {}
 
 var assert = require('assert');
 var should = require('chai').should()
-
+var expect = require('chai').expect
 
 //setup
 class Apple extends Food {}
 var pug = new Breed("Pug", 0)
 var dog = new Dog("Sam", pug)
 var devin = new Owner("Devin")
-var apple = new Apple(0)
+var apple = new Apple(1)
+var id_length = 50
+var id = generateID(id_length)
 
 describe('Breed', function () {
   describe('#Name', function () {
@@ -34,7 +41,7 @@ describe('Breed', function () {
   describe('#Name', function () {
     it('should return Name as string', function () {
       var pug = new Breed("Pug", 0)
-      assert.strictEqual(typeof pug.name, typeof "Pug")
+      assert.strictEqual(typeof pug.name, typeof "")
     });
   });
 
@@ -74,7 +81,7 @@ describe('Animal', function () {
 
   describe('#Name', function () {
     it('should return Name as String', function () {
-      assert.strictEqual(typeof dog.name, typeof "Sam")
+      assert.strictEqual(typeof dog.name, typeof "")
     })
   })
 
@@ -110,7 +117,7 @@ describe('Animal', function () {
 
   describe('#Breed', function () {
     it('should return Name as string', function () {
-      assert.strictEqual(typeof pug.name, typeof "Pug")
+      assert.strictEqual(typeof pug.name, typeof "")
     });
   });
 
@@ -160,6 +167,20 @@ describe('Animal', function () {
       assert.strictEqual(dog.owner.name, "Devin")
     });
   });
+
+   describe('#Eat', function () {
+    it('should exsist', function () {
+      should.exist(dog.eat(apple))
+    });
+  });
+
+   describe('#Eat', function () {
+    it('should increase animal HP by Foods food points', function () {
+      dog.hp = 0
+      dog.eat(apple)
+      assert.strictEqual(dog.hp, 1)
+    });
+  });
 })
 
 describe('Owner', function () {
@@ -171,7 +192,7 @@ describe('Owner', function () {
 
   describe('#Name', function () {
     it('should return Name as string', function () {
-      assert.strictEqual(typeof devin.name, typeof "Devin")
+      assert.strictEqual(typeof devin.name, typeof "")
     });
   });
 
@@ -213,7 +234,7 @@ describe('Food', function() {
 
   describe('#Name', function () {
     it('should return Name as String', function () {
-      assert.strictEqual(typeof apple.name, typeof "Sam")
+      assert.strictEqual(typeof apple.name, typeof "")
     })
   })
 
@@ -231,13 +252,43 @@ describe('Food', function() {
 
   describe('#Food Points', function () {
     it('should return Food Points passed', function () {
-      assert.strictEqual(apple.foodPoints, 0)
+      assert.strictEqual(apple.foodPoints, 1)
     });
   });
 
   describe('#Food Points', function () {
     it('should return Food Points as int', function () {
-      assert.strictEqual(typeof apple.foodPoints, typeof 0)
+      assert.strictEqual(typeof apple.foodPoints, typeof 1)
     });
   });
+})
+
+describe('generateID', function () {
+  describe('#Length', function () {
+    it('should return length passed', function() {
+      var length = 50
+      var id = generateID(length)
+      assert.strictEqual(id.length, length)
+    })
+  })
+
+  describe('#TypeReturned', function() {
+      it('should return ID as string', function () {
+      assert.strictEqual(typeof id, typeof "")
+    });
+  })
+
+   describe('#Contains', function () {
+    it('should contain uppercase letters', function() {
+      expect(id).to.match(/.*[A-Z].*/)
+    })
+
+     it('should contain lowecase letters letters', function() {
+      expect(id).to.match(/.*[a-z].*/)
+    })
+
+     it('should contain numbers', function() {
+      expect(id).to.match(/.*[0-9].*/)
+    })
+  })
 })
