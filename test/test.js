@@ -334,7 +334,6 @@ describe('Owner', function () {
       var dog2 = new Dog("Sam", pug)
       var devin2 = new Owner("Devin")
       devin2.addAnimal(dog2)
-
       var pet = devin2.getAnimalByName("Sam")
 
       assert.strictEqual(pet.name, dog2.name)
