@@ -174,7 +174,7 @@ describe('Animal', function () {
 
    describe('#Eat', function () {
     it('should exsist', function () {
-      should.exist(dog.eat(apple))
+       dog.eat.should.be.a('function');
     });
   });
 
@@ -192,12 +192,28 @@ describe('#Location', function () {
       should.exist(dog.location)
     });
     
-    it('setX should exsist', function () {
-      should.exist(dog.setX(0))
+    it('setX() should exsist', function () {
+      dog.setX.should.be.a('function');
     });
 
-   it('setY should exsist', function () {
-      should.exist(dog.setY(0))
+   it('setY() should exsist', function () {
+      dog.setX.should.be.a('function');
+    });
+
+    it('up() should exsist', function () {
+      dog.up.should.be.a('function');
+    });
+
+     it('down() should exsist', function () {
+       dog.down.should.be.a('function');
+    });
+
+     it('left() should exsist', function () {
+      dog.left.should.be.a('function');
+    });
+
+    it('right() should exsist', function () {
+       dog.right.should.be.a('function');
     });
 
     it('setX should set X to int passed', function () {
@@ -278,7 +294,7 @@ describe('#Location', function () {
     });
 
      it('should have function setDirection()', function () {
-        should.exist(dog.setDirection(""))
+        dog.setDirection.should.be.a('function');
     });
 
      it('should return north when set', function () {
@@ -306,7 +322,7 @@ describe('#Location', function () {
          assert.strictEqual(dog.direction, 'down')
     });
      it('should return north as string when set', function () {
-       dog.setDirection(direction.enum.NORHT)
+       dog.setDirection(direction.enum.NORTH)
         assert.strictEqual(typeof dog.direction, typeof '')
     });
      it('should return south as string when set', function () {
@@ -323,7 +339,7 @@ describe('#Location', function () {
     });
      it('should return up as string when set', function () {
        dog.setDirection(direction.enum.UP)
-         assert.strictEqual(typeof dog.directionP, typeof '')
+         assert.strictEqual(typeof dog.direction, typeof '')
     });
      it('should return down as string when set', function () {
        dog.setDirection(direction.enum.DOWN)
