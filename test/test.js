@@ -368,11 +368,9 @@ describe('Owner', function () {
      it('addAnimal() exists', function () {
      devin.addAnimal.should.be.a('function')
     });
-
     it('getAnimalByName() exists', function () {
      devin.getAnimalByName.should.be.a('function')
     });
-
     it('displayAnimals() exists', function () {
      devin.displayAnimals.should.be.a('function')
     });
