@@ -32,13 +32,7 @@ jobs:
     # Coma separated list of paths to test results
 Supports wildcards via [fast-glob](https://github.com/mrmlnc/fast-glob)
 
-    path: 
-    # Format of test results. Supported options:
-  - dart-json
-  - dotnet-trx
-  - flutter-json
-  - java-junit
-  - jest-junit
+  path: 
   - mocha-json
 
     reporter: 
