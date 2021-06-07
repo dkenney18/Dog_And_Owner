@@ -47,21 +47,18 @@ describe('Breed', function () {
 
   describe('#Name', function () {
     it('should return Name as string', function () {
-      var pug = new Breed("Pug", 0)
       assert.strictEqual(typeof pug.name, typeof "")
     });
   });
 
   describe('#HP', function () {
     it('should return HP passed', function () {
-      var pug = new Breed("Pug", 0)
       assert.strictEqual(pug.hp, 0)
     });
   });
 
   describe('#HP', function () {
     it('should return HP as int', function () {
-      var pug = new Breed("Pug", 0)
       assert.strictEqual(typeof pug.hp, typeof 0)
     });
   });
@@ -190,6 +187,7 @@ describe('Animal', function () {
   });
 
 describe('#Location', function () {
+  
    it('should exsist', function () {
       should.exist(dog.location)
     });
