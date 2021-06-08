@@ -17,7 +17,6 @@ class Owner extends Entity {
   getAnimalByName(name) {
     for (let i = 0; i < this.animals.length; i++) {
       const element = this.animals[i];
-
       if (element.name == name) {
         return element
       }
