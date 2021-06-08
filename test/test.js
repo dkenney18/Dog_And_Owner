@@ -38,8 +38,6 @@ var location = new Location()
 var id_length = 50
 var id = generateID(id_length)
 
-eval(2+2)
-
 describe('Breed', function () {
   describe('#Name', function () {
     it('should return Name passed', function () {
