@@ -18,7 +18,7 @@ const {
   Location
 } = require("../classes/base/Location")
 
-const direction = require("../classes/base/Direction")
+const directions = require("../classes/base/Direction")
 const generateID = require('../classes/base/Utility/GenerateID')
 
 
@@ -261,94 +261,93 @@ describe('Animal', function () {
   })
 
   describe('#Direction', function () {
-    //it('should have property direction', function () {
-      //dog.setDirection(direction.NORTH)
-     // should.exist(dog.direction)
-   // });
+    it('should have property direction', function () {
+      should.exist(dog.direction)
+    });
 
     it('should have function setDirection()', function () {
       dog.setDirection.should.be.a('function');
     });
 
     it('should return north when set', function () {
-      dog.setDirection(direction.enum.NORTH)
+      dog.setDirection(directions.enum.NORTH)
       assert.strictEqual(dog.direction, 'north')
     });
 
     it('should return south when set', function () {
-      dog.setDirection(direction.enum.SOUTH)
+      dog.setDirection(directions.enum.SOUTH)
       assert.strictEqual(dog.direction, 'south')
     });
 
     it('should return east when set', function () {
-      dog.setDirection(direction.enum.EAST)
+      dog.setDirection(directions.enum.EAST)
       assert.strictEqual(dog.direction, 'east')
     });
 
     it('should return west when set', function () {
-      dog.setDirection(direction.enum.WEST)
+      dog.setDirection(directions.enum.WEST)
       assert.strictEqual(dog.direction, 'west')
     });
 
     it('should return up when set', function () {
-      dog.setDirection(direction.enum.UP)
+      dog.setDirection(directions.enum.UP)
       assert.strictEqual(dog.direction, 'up')
     });
 
     it('should return down when set', function () {
-      dog.setDirection(direction.enum.DOWN)
+      dog.setDirection(directions.enum.DOWN)
       assert.strictEqual(dog.direction, 'down')
     });
 
     it('should return north as string when set', function () {
-      dog.setDirection(direction.enum.NORTH)
+      dog.setDirection(directions.enum.NORTH)
       assert.strictEqual(typeof dog.direction, typeof '')
     });
 
     it('should return south as string when set', function () {
-      dog.setDirection(direction.enum.SOUTH)
+      dog.setDirection(directions.enum.SOUTH)
       assert.strictEqual(typeof dog.direction, typeof '')
     });
 
     it('should return east as string when set', function () {
-      dog.setDirection(direction.enum.EAST)
+      dog.setDirection(directions.enum.EAST)
       assert.strictEqual(typeof dog.direction, typeof '')
     });
 
     it('should return west as string when set', function () {
-      dog.setDirection(direction.enum.WEST)
+      dog.setDirection(directions.enum.WEST)
       assert.strictEqual(typeof dog.direction, typeof '')
     });
 
     it('should return up as string when set', function () {
-      dog.setDirection(direction.enum.UP)
+      dog.setDirection(directions.enum.UP)
       assert.strictEqual(typeof dog.direction, typeof '')
     });
 
     it('should return down as string when set', function () {
-      dog.setDirection(direction.enum.DOWN)
+      dog.setDirection(directions.enum.DOWN)
       assert.strictEqual(typeof dog.direction, typeof '')
     });
 
     
     it('up(num) should set direction to north', function() {
       dog.up(0)
-      assert.strictEqual(dog.direction, direction.NORTH)
+      assert.strictEqual(dog.direction, directions.enum.NORTH)
     })
 
     it('down(num) should set direction to south', function() {
       dog.down(0)
-      assert.strictEqual(dog.direction, direction.SOUTH)
+      assert.strictEqual(dog.direction, directions.enum.SOUTH)
     })
 
     it('right(num) should set direction to east', function() {
       dog.right(0)
-      assert.strictEqual(dog.direction, direction.EAST)
+      assert.strictEqual(dog.direction, directions.enum.EAST)
     })
 
      it('left(num) should set direction to west', function() {
       dog.left(0)
-      assert.strictEqual(dog.direction, direction.WEST)
+      assert.strictEqual(dog.direction, directions.enum.WEST)
     })
   })
 })
@@ -493,84 +492,84 @@ describe('directions', function () {
   describe('#Has', function () {
 
     it('should have property enum', function () {
-      should.exist(direction.enum)
+      should.exist(directions.enum)
     });
 
     it('should contain north', function () {
-      should.exist(direction.enum.NORTH)
+      should.exist(directions.enum.NORTH)
     });
 
     it('should contain south', function () {
-      should.exist(direction.enum.SOUTH)
+      should.exist(directions.enum.SOUTH)
     });
 
     it('should contain east', function () {
-      should.exist(direction.enum.EAST)
+      should.exist(directions.enum.EAST)
     });
 
     it('should contain west', function () {
-      should.exist(direction.enum.WEST)
+      should.exist(directions.enum.WEST)
     });
 
     it('should contain up', function () {
-      should.exist(direction.enum.UP)
+      should.exist(directions.enum.UP)
     });
 
     it('should contain down', function () {
-      should.exist(direction.enum.DOWN)
+      should.exist(directions.enum.DOWN)
     });
 
     it('should return north', function () {
-      assert.strictEqual(direction.enum.NORTH, 'north')
+      assert.strictEqual(directions.enum.NORTH, 'north')
     });
 
     it('should return south', function () {
-      assert.strictEqual(direction.enum.SOUTH, 'south')
+      assert.strictEqual(directions.enum.SOUTH, 'south')
     });
 
     it('should return east', function () {
-      assert.strictEqual(direction.enum.EAST, 'east')
+      assert.strictEqual(directions.enum.EAST, 'east')
     });
 
     it('should return west', function () {
-      assert.strictEqual(direction.enum.WEST, 'west')
+      assert.strictEqual(directions.enum.WEST, 'west')
     });
 
     it('should return up', function () {
-      assert.strictEqual(direction.enum.UP, 'up')
+      assert.strictEqual(directions.enum.UP, 'up')
     });
 
     it('should return down', function () {
-      assert.strictEqual(direction.enum.DOWN, 'down')
+      assert.strictEqual(directions.enum.DOWN, 'down')
     });
 
 
     it('should return north as string', function () {
-      assert.strictEqual(typeof direction.enum.NORTH, typeof '')
+      assert.strictEqual(typeof directions.enum.NORTH, typeof '')
     });
 
     it('should return south as string', function () {
-      assert.strictEqual(typeof direction.enum.SOUTH, typeof '')
+      assert.strictEqual(typeof directions.enum.SOUTH, typeof '')
     });
 
     it('should return east as string', function () {
-      assert.strictEqual(typeof direction.enum.EAST, typeof '')
+      assert.strictEqual(typeof directions.enum.EAST, typeof '')
     });
 
     it('should return west as string', function () {
-      assert.strictEqual(typeof direction.enum.WEST, typeof '')
+      assert.strictEqual(typeof directions.enum.WEST, typeof '')
     });
 
     it('should return up as string', function () {
-      assert.strictEqual(typeof direction.enum.UP, typeof '')
+      assert.strictEqual(typeof directions.enum.UP, typeof '')
     });
 
     it('should return down as string', function () {
-      assert.strictEqual(typeof direction.enum.DOWN, typeof '')
+      assert.strictEqual(typeof directions.enum.DOWN, typeof '')
     });
 
     it('should have length 6', function () {
-      assert.strictEqual(Object.keys(direction.enum).length, 6)
+      assert.strictEqual(Object.keys(directions.enum).length, 6)
     });
   })
 })
