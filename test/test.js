@@ -618,8 +618,21 @@ describe('Location', function () {
 
 describe('World', function() {
   describe('#Basic', function() {
-    it('should exist', function() {
-      should.exist(new World())
+    it('should exist is empty now', function() {
+    })
+  })
+})
+
+describe('Lands', function() {
+  describe('#Basic', function() {
+    it('should exist is empty now', function() {
+    })
+  })
+})
+
+describe('Place', function() {
+  describe('#Basic', function() {
+    it('should exist is empty now', function() {
     })
   })
 })
