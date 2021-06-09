@@ -328,6 +328,27 @@ describe('Animal', function () {
       dog.setDirection(direction.enum.DOWN)
       assert.strictEqual(typeof dog.direction, typeof '')
     });
+
+    
+    it('up(num) should set direction to north', function() {
+      dog.up(0)
+      assert.strictEqual(dog.direction, direction.NORTH)
+    })
+
+    it('down(num) should set direction to south', function() {
+      dog.down(0)
+      assert.strictEqual(dog.direction, direction.SOUTH)
+    })
+
+    it('right(num) should set direction to east', function() {
+      dog.right(0)
+      assert.strictEqual(dog.direction, direction.EAST)
+    })
+
+     it('left(num) should set direction to west', function() {
+      dog.left(0)
+      assert.strictEqual(dog.direction, direction.WEST)
+    })
   })
 })
 

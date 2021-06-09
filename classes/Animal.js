@@ -44,18 +44,22 @@ class Animal {
   }
 
   left(num) {
+    this.direction = this.direction.WEST
     this.location.x -= num
   }
 
   right(num) {
+    this.direction = this.direction.EAST
     this.location.x += num
   }
 
   up(num) {
+    this.direction = this.direction.NORTH
     this.location.y += num
   }
 
   down(num) {
+    this.direction = this.direction.SOUTH
     this.location.y -= num
   }
 
