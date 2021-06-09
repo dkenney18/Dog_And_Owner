@@ -9,3 +9,7 @@ class Place {
     this.type = placeType.enum.TOWN
   }
 }
+
+module.exports = {
+  Place
+}
