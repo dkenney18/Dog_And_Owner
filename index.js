@@ -1,14 +1,11 @@
 const { Breed } = require("./classes/base/Breed.js")
 const { Animal } = require("./classes/Animal.js")
 const { Owner } = require("./classes/Owner.js")
-const { Place } = require("./classes/game_world/places/base/Place.js")
 
 class Dog extends Animal { }
 class Cat extends Animal { }
 class Cow extends Animal { }
 class Fish extends Animal { }
-
-class NeverWinter extends Place { }
 
 var devin = new Owner("Devin")
 var claire = new Owner("Claire")
