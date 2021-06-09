@@ -615,3 +615,11 @@ describe('Location', function () {
     })
   })
 })
+
+describe('World', function() {
+  describe('#Basic', function() {
+    it('should exist', function() {
+      should.exist(new World())
+    })
+  })
+})
