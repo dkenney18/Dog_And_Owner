@@ -30,3 +30,5 @@ claire
 
 devin.displayAnimals()
 claire.displayAnimals()
+
+console.log(devin.getAnimalByName("fido").direction)

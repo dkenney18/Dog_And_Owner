@@ -1,5 +1,7 @@
 const {Enum} = require("./base/Enum.js")
 const {Location} = require("./base/Location.js")
+
+const direction = require("./base/Direction.js")
 const generateID = require("./base/Utility/GenerateID.js")
 
 class AnimalTypes extends Enum {}
@@ -44,22 +46,22 @@ class Animal {
   }
 
   left(num) {
-    this.direction = this.direction.WEST
+    this.direction = direction.WEST
     this.location.x -= num
   }
 
   right(num) {
-    this.direction = this.direction.EAST
+    this.direction = direction.EAST
     this.location.x += num
   }
 
   up(num) {
-    this.direction = this.direction.NORTH
+    this.direction = direction.NORTH
     this.location.y += num
   }
 
   down(num) {
-    this.direction = this.direction.SOUTH
+    this.direction = direction.SOUTH
     this.location.y -= num
   }
 
