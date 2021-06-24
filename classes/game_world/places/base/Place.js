@@ -1,12 +1,12 @@
 const placeSize = require("../base/Size.js")
 const placeType = require("../base/PlaceType.js")
 class Place {
-  constructor() {
+  constructor(size, type) {
     this.population = []
     this.populationCount = this.population.length
     this.buildings = []
-    this.size = placeSize.enum.SMALL
-    this.type = placeType.enum.TOWN
+    this.size = size
+    this.type = type
   }
 }
 
